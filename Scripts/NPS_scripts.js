@@ -1,462 +1,3 @@
-//Autofill arrays
-var states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois", "Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
-var places = ["Abraham Lincoln Birthplace National Historical Park",
-		"Acadia National Park",
-		"Adams National Historical Park",
-		"Adams National Memorial",
-		"African American Civil War Memorial National Memorial",
-		"African Burial Ground National Monument",
-		"Agate Fossil Beds National Monument",
-		"Alagnak Wild River National Wild And Scenic River",
-		"Alcatraz Island",
-		"Aleutian World War II National Historic Area",
-		"Alibates Flint Quarries National Monument",
-		"Allegheny Portage Railroad National Historic Site",
-		"Amistad National Recreation Area",
-		"Anacostia Park",
-		"Andersonville National Historic Site",
-		"Aniakchak National Monument and Preserve",
-		"Andrew Johnson National Historic Site",
-		"Antietam National Battlefield",
-		"Appomattox Court House National Historical Park",
-		"Apostle Islands National Lakeshore",
-		"Appalachian National Scenic Trail",
-		"Arches National Park",
-		"Arlington House The Robert E. Lee Memorial National Memorial",
-		"Arkansas Post National Memorial",
-		"Assateague Island National Seashore",
-		"Aztec Ruins National Monument",
-		"Badlands National Park",
-		"Bandelier National Monument",
-		"Baltimore-Washington National Parkway",
-		"Bering Land Bridge National Preserve",
-		"Bent's Old Fort National Historic Site",
-		"Bear Paw Battlefield",
-		"Big Bend National Park",
-		"Bighorn Canyon National Recreation Area",
-		"Big Cypress National Preserve",
-		"Big Hole National Battlefield",
-		"Biscayne National Park",
-		"Big South Fork National River and Recreation Area National River",
-		"Big Thicket National Preserve",
-		"Black Canyon Of The Gunnison National Park",
-		"Blue Ridge Parkway",
-		"Bluestone National Scenic River National Wild And Scenic River",
-		"Boston African American National Historic Site",
-		"Boston Harbor Islands National Recreation Area",
-		"Boston National Historical Park",
-		"Booker T. Washington National Monument",
-		"Bryce Canyon National Park",
-		"Brices Cross Roads National Battlefield Site",
-		"Brown v. Board Of Education National Historic Site",
-		"Buffalo National River",
-		"Buck Island Reef National Monument",
-		"Cabrillo National Monument",
-		"Canyon De Chelly National Monument",
-		"Castle Clinton National Monument",
-		"Cape Cod National Seashore",
-		"Casa Grande Ruins National Monument",
-		"Cape Hatteras National Seashore",
-		"Capitol Hill Parks",
-		"Cape Krusenstern National Monument",
-		"Cape Lookout National Seashore",
-		"Cape Henry National Memorial",
-		"Canaveral National Seashore",
-		"Canyonlands National Park",
-		"Capitol Reef National Park",
-		"Cane River Creole National Historical Park",
-		"Carl Sandburg Home National Historic Site",
-		"Castillo De San Marcos National Monument",
-		"Catoctin Mountain Park",
-		"Carlsbad Caverns National Park",
-		"Capulin Volcano National Monument",
-		"Carter G. Woodson Home National Historic Site",
-		"Chesapeake Bay Gateways",
-		"Cedar Creek and Belle Grove National Historical Park",
-		"Cedar Breaks National Monument",
-		"Chamizal National Memorial",
-		"Chattahoochee River National Recreation Area",
-		"Chickamauga and Chattanooga National Military Park",
-		"Chaco Culture National Historical Park",
-		"Chickasaw National Recreation Area",
-		"Chiricahua National Monument",
-		"Channel Islands National Park",
-		"Chesapeake and Ohio Canal National Historical Park",
-		"Charles Pinckney National Historic Site",
-		"Christiansted National Historic Site",
-		"Central High School National Historic Site",
-		"City Of Rocks National Reserve",
-		"Clara Barton National Historic Site",
-		"Claude Moore Colonial Farm",
-		"Constitution Gardens",
-		"Colorado National Monument",
-		"Colonial National Historical Park",
-		"Colonial Parkway",
-		"Congaree National Park",
-		"Coronado National Memorial",
-		"Cowpens National Battlefield",
-		"Crown of the Continent Ecosystem",
-		"Crater Lake National Park",
-		"Craters Of The Moon National Monument and Preserve",
-		"Cumberland Gap National Historical Park",
-		"Cumberland Island National Seashore",
-		"Curecanti National Recreation Area",
-		"Cuyahoga Valley National Park",
-		"David Berger National Memorial",
-		"Delaware National Scenic River National Wild And Scenic River",
-		"Denali National Park and Preserve",
-		"Devils Postpile National Monument",
-		"DeSoto National Memorial",
-		"Devils Tower National Monument",
-		"Death Valley National Park",
-		"Delaware Water Gap National Recreation Area",
-		"Dinosaur National Monument",
-		"Dry Tortugas National Park",
-		"Dwight D. Eisenhower National Memorial",
-		"East Potomac Park",
-		"Ebey's Landing NH Reserve National Reserve",
-		"Edgar Allan Poe National Historic Site",
-		"Thomas Edison National Historical Park",
-		"Effigy Mounds National Monument",
-		"Eisenhower National Historic Site",
-		"Ellis Island National Monument",
-		"El Malpais National Monument",
-		"El Morro National Monument",
-		"Eleanor Roosevelt National Historic Site",
-		"Eugene O'Neill National Historic Site",
-		"Everglades National Park",
-		"Farmington National Wild And Scenic River",
-		"Federal Hall National Memorial",
-		"Fire Island National Seashore",
-		"First Ladies National Historic Site",
-		"Florissant Fossil Beds National Monument",
-		"Flight 93 National Memorial",
-		"Fort Bowie National Historic Site",
-		"Fossil Butte National Monument",
-		"Fort Caroline National Memorial",
-		"Fort Circle Parks",
-		"Fort Davis National Historic Site",
-		"Fort Donelson National Battlefield",
-		"Fort Dupont Park",
-		"Fort Foote Park",
-		"Fort Frederica National Monument",
-		"Fort Laramie National Historic Site",
-		"Fort Larned National Historic Site",
-		"Fort Matanzas National Monument",
-		"Fort McHenry NM and Historic Shrine National Monument",
-		"Fort Moultrie National Monument",
-		"Fort Necessity National Battlefield",
-		"Fort Point National Historic Site",
-		"Fort Pulaski National Monument",
-		"Fort Raleigh National Historic Site",
-		"Fort Scott National Historic Site",
-		"Fort Smith National Historic Site",
-		"Fort Stanwix National Monument",
-		"Fort Sumter National Monument",
-		"Ford's Theatre National Historic Site",
-		"Fort Union National Monument",
-		"Fort Union Trading Post National Historic Site",
-		"Fort Vancouver National Historic Site",
-		"Fort Washington Park",
-		"Franklin Delano Roosevelt National Memorial",
-		"Frederick Douglass National Historic Site",
-		"Friendship Hill National Historic Site",
-		"Frederick Law Olmsted National Historic Site",
-		"Francis Scott Key National Memorial",
-		"Fredericksburg and Spotsylvania County Battlefields Memorial National Military Park National Military Park",
-		"Gates Of The Arctic National Park and Preserve",
-		"Gauley River National Recreation Area",
-		"Gateway National Recreation Area",
-		"General Grant National Memorial",
-		"George Mason Memorial",
-		"George Rogers Clark National Historical Park",
-		"Gettysburg National Military Park",
-		"George Washington Birthplace National Monument",
-		"Gila Cliff Dwellings National Monument",
-		"Glacier National Park",
-		"Glacier Bay National Park and Preserve",
-		"Glen Canyon National Recreation Area",
-		"Glen Echo Park",
-		"Glorieta National Battlefield",
-		"Golden Gate National Recreation Area",
-		"Governors Island National Monument",
-		"Golden Spike National Historic Site",
-		"Great Basin National Park",
-		"Grand Canyon National Park",
-		"Greenbelt Park",
-		"Great Egg Harbor National Scenic and Recreational River National Wild And Scenic River",
-		"Great Falls Park",
-		"Grant-Kohrs Ranch National Historic Site",
-		"Grand Portage National Monument",
-		"Great Sand Dunes National Park and Preserve",
-		"Great Smoky Mountains National Park",
-		"Grand Teton National Park",
-		"Guilford Courthouse National Military Park",
-		"Gulf Islands National Seashore",
-		"Guadalupe Mountains National Park",
-		"George Washington Carver National Monument",
-		"George Washington Memorial Parkway",
-		"Harpers Ferry National Historical Park",
-		"Hagerman Fossil Beds National Monument",
-		"Hamilton Grange National Memorial",
-		"Harmony Hall",
-		"Haleakala National Park",
-		"Hampton National Historic Site",
-		"Hawaii Volcanoes National Park",
-		"Herbert Hoover National Historic Site",
-		"Horseshoe Bend National Military Park",
-		"Hopewell Culture National Historical Park",
-		"Home Of Franklin D. Roosevelt National Historic Site",
-		"Hopewell Furnace National Historic Site",
-		"Homestead NM of America National Monument",
-		"Hot Springs National Park",
-		"Hovenweep National Monument",
-		"Harry S. Truman National Historic Site",
-		"Hubbell Trading Post National Historic Site",
-		"Ice Age National Scenic Trail",
-		"Independence National Historical Park",
-		"Indiana Dunes National Lakeshore",
-		"Isle Royale National Park",
-		"James A. Garfield National Historic Site",
-		"New Orleans Jazz National Historical Park",
-		"Jewel Cave National Monument",
-		"Jefferson National Expansion Memorial National Memorial",
-		"Thomas Jefferson Memorial",
-		"Jean Lafitte National Historical Park and Preserve",
-		"Jimmy Carter National Historic Site",
-		"John Day Fossil Beds National Monument",
-		"John D. Rockefeller Jr. Memorial Parkway",
-		"John Ericsson National Memorial",
-		"John Fitzgerald Kennedy National Historic Site",
-		"John F. Kennedy Center for the Performing Arts",
-		"Johnstown Flood National Memorial",
-		"John Muir National Historic Site",
-		"Joshua Tree National Park",
-		"Kaloko-Honokohau National Historical Park",
-		"Kalaupapa National Historical Park",
-		"Katmai National Park and Preserve",
-		"Kenai Fjords National Park",
-		"Kennesaw Mountain National Battlefield Park",
-		"Kenilworth Park and Aquatic Gardens",
-		"Keweenaw National Historical Park",
-		"Kings Canyon National Park",
-		"Kings Mountain National Military Park",
-		"Klondike Gold Rush National Historical Park",
-		"Klondike Gold Rush - Seattle Unit National Historical Park",
-		"Knife River Indian Villages National Historic Site",
-		"Kobuk Valley National Park",
-		"Korean War Veterans National Memorial",
-		"Lava Beds National Monument",
-		"Lake Chelan National Recreation Area",
-		"Lake Clark National Park and Preserve",
-		"Lake Mead National Recreation Area",
-		"Lamprey Wild and Scenic River",
-		"Lake Meredith National Recreation Area",
-		"Lake Roosevelt National Recreation Area",
-		"Lassen Volcanic National Park",
-		"Lewis and Clark National Historical Park",
-		"Little Bighorn Battlefield National Monument",
-		"Lincoln Boyhood National Memorial",
-		"Lincoln Home National Historic Site",
-		"Lincoln Memorial National Memorial",
-		"Little River Canyon National Preserve",
-		"Longfellow House - Washington's Headquarters National Historic Site",
-		"Lower Saint Croix National Scenic River",
-		"Lowell National Historical Park",
-		"Lyndon Baines Johnson Memorial Grove on the Potomac National Memorial",
-		"Lyndon B. Johnson National Historical Park",
-		"Mary McLeod Bethune Council House National Historic Site",
-		"Marsh-Billings-Rockefeller National Historical Park",
-		"Mammoth Cave National Park",
-		"Marin Headlands Sites",
-		"National Mall",
-		"Martin Luther King Jr National Historic Site",
-		"Manassas National Battlefield Park",
-		"Manzanar National Historic Site",
-		"Manhattan Sites",
-		"Maurice National Wild And Scenic River",
-		"Martin Van Buren National Historic Site",
-		"Maggie L. Walker National Historic Site",
-		"McLoughlin House National Historic Site",
-		"Meridian Hill Park",
-		"Mesa Verde National Park",
-		"Mimbres Culture National Monument",
-		"Minidoka Internment National Historic Site",
-		"Minute Man National Historical Park",
-		"Minuteman Missile National Historic Site",
-		"Mississippi National River and Recreation Areas National River",
-		"Martin Luther King Jr National Historic Site",
-		"Missouri National Recreational River National Wild And Scenic River",
-		"Montezuma Castle National Monument",
-		"Moores Creek National Battlefield",
-		"Mojave National Preserve",
-		"Monocacy National Battlefield",
-		"Mount Rainier National Park",
-		"Morristown National Historical Park",
-		"Mount Rushmore National Memorial",
-		"Mt. Soledad National Memorial",
-		"Muir Woods National Monument",
-		"Natural Bridges National Monument",
-		"National Capital Parks",
-		"National Capital Parks-East",
-		"National Mall and Memorial Parks",
-		"Natchez National Historical Park",
-		"Natchez Trace Parkway",
-		"Natchez Trace National Scenic Trail",
-		"Navajo National Monument",
-		"U.S. Navy Memorial",
-		"North Cascades National Park Service Complex",
-		"New Bedford Whaling National Historical Park",
-		"Nez Perce National Historical Park",
-		"New River Gorge National River",
-		"Nicodemus National Historic Site",
-		"Niobrara and Missouri National Scenic and Recreational Rivers",
-		"Niobrara National Scenic River National Wild And Scenic River",
-		"Ninety Six National Historic Site",
-		"National Law Enforcement Officers National Memorial",
-		"Noatak National Preserve",
-		"North Cascades National Park",
-		"North Country National Scenic Trail",
-		"National Parks of New York Harbor Management Unit",
-		"National Park of American Samoa National Park",
-		"Obed Wild and Scenic River National Wild And Scenic River",
-		"Ocmulgee National Monument",
-		"The Old Stone House",
-		"Olympic National Park",
-		"Old Post Office Tower",
-		"Oregon Caves National Monument",
-		"Organ Pipe Cactus National Monument",
-		"Oxon Cove Park and Oxon Hill Run",
-		"Oxon Run National Parkway",
-		"Ozark National Scenic Riverways National River",
-		"Palo Alto Battlefield National Historical Park",
-		"Pennsylvania Avenue National Historic Site",
-		"Paterson Great Falls National Historical Park",
-		"Padre Island National Seashore",
-		"Parashant National Monument",
-		"Pecos National Historical Park",
-		"Petrified Forest National Park",
-		"Pea Ridge National Military Park",
-		"Petersburg National Battlefield",
-		"Petroglyph National Monument",
-		"Perry's Victory and International Peace Memorial National Memorial",
-		"Hohokam Pima National Monument",
-		"Peirce Mill Park",
-		"Pinnacles National Monument",
-		"Pipestone National Monument",
-		"Pictured Rocks National Lakeshore",
-		"Piscataway Park",
-		"Pipe Spring National Monument",
-		"Port Chicago Naval Magazine National Memorial",
-		"Poverty Point National Monument",
-		"Point Reyes National Seashore",
-		"President's Park (White House)",
-		"Presidio of San Francisco",
-		"Prince William Forest Park",
-		"Puukohola Heiau National Historic Site",
-		"Pu'uhonua o Honaunau National Historical Park",
-		"Rainbow Bridge National Monument",
-		"Redwood National Park",
-		"Richmond National Battlefield Park",
-		"Rio Grande Wild and Scenic River National Wild And Scenic River",
-		"River Raisin National Battlefield Park",
-		"Rock Creek Park",
-		"Ross Lake National Recreation Area",
-		"Rocky Mountain National Park",
-		"Rosie The Riveter WWII Home Front National Historical Park",
-		"Roosevelt-Vanderbilt Headquarters",
-		"Roger Williams National Memorial",
-		"Ronald Reagan Boyhood Home National Historic Site",
-		"Russell Cave National Monument",
-		"San Antonio Missions National Historical Park",
-		"Saint Croix National Scenic River National Wild And Scenic River",
-		"Saint Croix Island International Historic Site",
-		"San Francisco Maritime National Historical Park",
-		"Saint-Gaudens National Historic Site",
-		"Saguaro National Park",
-		"Sagamore Hill National Historic Site",
-		"Saugus Iron Works National Historic Site",
-		"San Juan Island National Historical Park",
-		"San Juan National Historic Site",
-		"Salem Maritime National Historic Site",
-		"Santa Monica Mountains National Recreation Area",
-		"Sand Creek Massacre National Historic Site",
-		"Saint Paul's Church National Historic Site",
-		"Salinas Pueblo Missions National Monument",
-		"Saratoga National Historical Park",
-		"Salt River Bay NHP and Ecological Preserve National Historical Park",
-		"Scotts Bluff National Monument",
-		"Sequoia and Kings Canyon National Parks",
-		"Sequoia National Park",
-		"Shenandoah National Park",
-		"Shiloh National Military Park",
-		"Sitka National Historical Park",
-		"Sleeping Bear Dunes National Lakeshore",
-		"Springfield Armory National Historic Site",
-		"Steamtown National Historic Site",
-		"Statue Of Liberty National Monument",
-		"Stones River National Battlefield",
-		"Sudbury Assabet and Concord National Wild And Scenic River",
-		"Sunset Crater Volcano National Monument",
-		"Suitland Parkway",
-		"Tallgrass Prairie National Preserve",
-		"Theodore Roosevelt Island National Memorial",
-		"Thaddeus Kosciuszko National Memorial",
-		"Theodore Roosevelt Birthplace National Historic Site",
-		"Theodore Roosevelt Inaugural National Historic Site",
-		"Theodore Roosevelt National Park",
-		"Thomas Stone National Historic Site",
-		"Timpanogos Cave National Monument",
-		"Timucuan Ecological and Historic Preserve",
-		"Tonto National Monument",
-		"Tuskegee Airmen National Historic Site",
-		"Tuskegee Institute National Historic Site",
-		"Tumacacori National Historical Park",
-		"Tupelo National Battlefield",
-		"Tuzigoot National Monument",
-		"Ulysses S. Grant National Historic Site",
-		"Upper Delaware National Scenic and Recreation River National Wild And Scenic River",
-		"Valley Forge National Historical Park",
-		"World War II Valor in the Pacific National Monument",
-		"Vanderbilt Mansion National Historic Site",
-		"Vicksburg National Military Park",
-		"Virgin Islands Coral Reef National Monument",
-		"Virgin Islands National Park",
-		"Vietnam Veterans Memorial National Memorial",
-		"Vietnam Womens National Memorial",
-		"Voyageurs National Park",
-		"Washita Battlefield National Historic Site",
-		"Walnut Canyon National Monument",
-		"Warren G Harding National Memorial",
-		"Waterton Lakes National Park (Canada)",
-		"Washington Monument National Memorial",
-		"War In The Pacific National Historical Park",
-		"Warm Springs Apache",
-		"Western Arctic National Parklands",
-		"Weir Farm National Historic Site",
-		"West Potomac Park",
-		"White House (President's Park)",
-		"Whiskeytown National Recreation Area",
-		"Whitman Mission National Historic Site",
-		"White Sands National Monument",
-		"Wildcat Brook Wild and Scenic River",
-		"Wind Cave National Park",
-		"William Jefferson Clinton Birthplace National Historic Site",
-		"Wilson's Creek National Battlefield",
-		"William Howard Taft National Historic Site",
-		"Women's Rights National Historical Park",
-		"Wolf Trap National Park for the Performing Arts",
-		"Wright Brothers National Memorial",
-		"Wrangell - St Elias National Park and Preserve",
-		"Wupatki National Monument",
-		"World War II Memorial National Memorial",
-		"Yellowstone National Park",
-		"Yorktown Battlefield",
-		"Yosemite National Park",
-		"Yukon-Charley Rivers National Preserve",
-		"Yucca House National Monument",
-		"Zion National Park"];
-
 //Implements overarching search functionality
 function search() {
 	//Clear previous search results
@@ -551,12 +92,14 @@ function getVisitorCenters(p, s, query) {
 	}
 }
 
+//Gets information about relevant campgrounds
 function getCampgrounds(p, s, query) {
 	var txt = httpGet("https://developer.nps.gov/api/v1/campgrounds?limit=200&parkCode=" + p + "&stateCode=" + s + "&q=" + query + "&api_key=qiwIVkT9FagdsHyhO3umyrCWj247FXAatbK65E7g");
 	var obj = JSON.parse(txt);
 	var info = "";
 	var i;
 
+	//Adds collapsible elemt under "Campgrounds" category
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		info += "<button class=\"collapsible\">&nbsp;" + obj.data[i].name + "</button><div class=\"content\"><p id=\"grounds" + i.toString() + "\">None</p></div>";
 	}	
@@ -564,121 +107,163 @@ function getCampgrounds(p, s, query) {
 	var d1 = document.getElementById("campgrounds");
 	d1.insertAdjacentHTML('afterend', info);
 
+	//Gets relevant information about each campground
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		info = "";
+		
+		//Get campground description and description url
 		if (obj.data[i].reservationsurl == "") {
 			info += "<ul style=\"list-style-type:square;\"><li><b>Description</b>: " + checkNull(obj.data[i].description) + "</li><br>";
 		} else {
 			info += "<ul style=\"list-style-type:square;\"><li><a href=" + obj.data[i].reservationsurl + "><b>Description</b></a>: " + checkNull(obj.data[i].description) + "</li><br>";
 		}
 		 
+		//Get campground amenities
 		info += "<li><b>Amenities: </b><ul style=\"list-style-type:square;\">";
 		 
+		//Get campground toilet information
 		info += "<li><ins>Toilets: </ins><ul style=\"list-style-type:square;\">";
 		var j;
 		for (j = 0; j < obj.data[i].amenities.toilets.length; j++) {
 			info += "<li>" + checkNull(obj.data[i].amenities.toilets[j]) + "</li>";
 		}
 		info += "</li></ul>";
-			 
+		
+		//Get campground shower information
 		info += "<li><ins>Showers: </ins><ul style=\"list-style-type:square;\">";
 		for (j = 0; j < obj.data[i].amenities.showers.length; j++) {
 			info += "<li>" + checkNull(obj.data[i].amenities.showers[j]) + "</li>";
 		}
 		info += "</li></ul>";
-			 
+		
+		//Get campground potable water information
 		info += "<li><ins>Potable Water: </ins><ul style=\"list-style-type:square;\">";
 		for (j = 0; j < obj.data[i].amenities.potablewater.length; j++) {
 			info += "<li>" + checkNull(obj.data[i].amenities.potablewater[j]) + "</li>";
 		}
 		info += "</li></ul>";
-	 
+	   
+		//Get campground internet connectivity information
 		info += "<li><ins>Internet Connectivity:</ins> " + checkNull(obj.data[i].amenities.internetconnectivity) + "</li>";
+		//Get campground cell phone reception information
 		info += "<li><ins>Cell Phone Reception:</ins> " + checkNull(obj.data[i].amenities.cellphonereception) + "</li>";
+		//Get campground laundry information
 		info += "<li><ins>Laundry:</ins> " + checkNull(obj.data[i].amenities.laundry) + "</li>";
+		//Get campground trash/recycling information
 		info += "<li><ins>Trash/Recycling Collection:</ins> " + checkNull(obj.data[i].amenities.trashrecyclingcollection) + "</li>";
+		//Get campground dump station information
 		info += "<li><ins>Dump Station:</ins> " + checkNull(obj.data[i].amenities.dumpstation) + "</li>";
+		//Get campground camp store information
 		info += "<li><ins>Camp Store:</ins> " + checkNull(obj.data[i].amenities.campstore) + "</li>";
+		//Get campground ice availability information
 		info += "<li><ins>Ice Available for Sale:</ins> " + checkNull(obj.data[i].amenities.iceavailableforsale) + "</li>";
+		//Get campground firewood for sale information
 		info += "<li><ins>Firewood for Sale:</ins> " + checkNull(obj.data[i].amenities.firewoodforsale) + "</li>";
+		//Get campground amphitheater information
 		info += "<li><ins>Amphitheater:</ins> " + checkNull(obj.data[i].amenities.ampitheater) + "</li>";
+		//Get campground food storage information
 		info += "<li><ins>Food Storage Lockers:</ins> " + checkNull(obj.data[i].amenities.foodstoragelockers) + "</li>";
+		//Get campground staff information
 		info += "<li><ins>Staff for Volunteer Host on Site:</ins> " + checkNull(obj.data[i].amenities.staffforcolunteerhostonsite) + "</li>";	 
 		info += "</ul></li><br>";
-			 
+		
+		//Get campground general campsites information
 		info += "<li><b>Campsites: </b><ul style=\"list-style-type:square;\">";
+		//Get campground total sites
 		info += "<li><ins>Total Sites:</ins> " + checkNull(obj.data[i].campsites.totalsites) + "</li>";
+		//Get campground tent information
 		info += "<li><ins>Tent Only:</ins> " + checkNull(obj.data[i].campsites.tentonly) + "</li>";
+		//Get campground type other information
 		info += "<li><ins>Other:</ins> " + checkNull(obj.data[i].campsites.group) + "</li>";
+		//Get campground group site information
 		info += "<li><ins>Group:</ins> " + checkNull(obj.data[i].campsites.group) + "</li>";
+		//Get campground horse information
 		info += "<li><ins>Horse:</ins> " + checkNull(obj.data[i].campsites.horse) + "</li>";
+		//Get campground electrical hookups information
 		info += "<li><ins>Electrical Hookups:</ins> " + checkNull(obj.data[i].campsites.electricalhookups) + "</li>";
+		//Get campground RV information
 		info += "<li><ins>RV Only:</ins> " + checkNull(obj.data[i].campsites.rvonly) + "</li>";
+		//Get campground boat information
 		info += "<li><ins>Walk Boat To:</ins> " + checkNull(obj.data[i].campsites.walkboatto) + "</li>";
 		info += "</ul></li><br>";
-			 
+		
+		//Get campground weather information
 		info += "<li><b>Weather: </b>" + checkNull(obj.data[i].weatheroverview) + "</li><br>";	 
-	 
+	
+		//Get campground regulations information and URL
 		if (obj.data[i].regulationsurl == "") {
 			info += "<li><b>Regulations</b>: " + checkNull(obj.data[i].regulationsoverview) + "</li><br>";
 		} else {
 			info += "<li><a href=" + checkNull(obj.data[i].regulationsurl) + "><b>Regulations</b></a>: " + checkNull(obj.data[i].regulationsoverview) + "</li><br>";
 		}
 	 
-	 
+		//Get campground accessibility information	 
 		info += "<li><b>Accessibility: </b><ul style=\"list-style-type:square;\">";
 		info += "<li><ins>Classifications:</ins> <ul style=\"list-style-type:square;\">";
 
 		for (j = 0; j < obj.data[i].accessibility.classifications.length; j++) {
 			info += "<li>" + checkNull(obj.data[i].accessibility.classifications[j]) + "</li>";
 		}
-			 
+		//Get campground access roads information 
 		info += "</li></ul><li><ins>Access Roads:</ins> <ul style=\"list-style-type:square;\">";
 
 		for (j = 0; j < obj.data[i].accessibility.accessroads.length; j++) {
 			info += "<li>" + checkNull(obj.data[i].accessibility.accessroads[j]) + "</li>";
 		}
-	 
+		//Get campground internet information	 
 		info += "</li></ul><li><ins>Internet Info:</ins> " + checkNull(obj.data[i].accessibility.internetinfo) + "</li>";
+		//Get campground cell phone information
 		info += "<li><ins>Cell Phone Info:</ins> " + checkNull(obj.data[i].accessibility.cellphoneinfo) + "</li>";
+		//Get campground firestove information
 		info += "<li><ins>Firestove Policy:</ins> " + checkNull(obj.data[i].accessibility.firestovepolicy) + "</li>";
-		info += "<li><ins>RVs Allowed:</ins> " + checkNull(obj.data[i].accessibility.rvallowed) + "</li>";	 info += "<li><ins>RV Info:</ins> " + checkNull(obj.data[i].accessibility.rvinfo) + "</li>";
+		//Get campground RV information
+		info += "<li><ins>RVs Allowed:</ins> " + checkNull(obj.data[i].accessibility.rvallowed) + "</li>";	 
+		info += "<li><ins>RV Info:</ins> " + checkNull(obj.data[i].accessibility.rvinfo) + "</li>";
 		info += "<li><ins>RV Max Lenth:</ins> " + checkNull(obj.data[i].accessibility.rvmaxlength) + "</li>";
+		//Get campground trailer information
 		info += "<li><ins>Trailers Allowed:</ins> " + checkNull(obj.data[i].accessibility.trailerallowed) + "</li>";
 		info += "<li><ins>Trailer Max Length:</ins> " + checkNull(obj.data[i].accessibility.trailermaxlength) + "</li>";
+		//Get campground wheel chair access information
 		info += "<li><ins>Wheel Chair Access:</ins> " + checkNull(obj.data[i].accessibility.wheelchairaccess) + "</li>";
+		//Get campground ADA information
 		info += "<li><ins>ADA Info:</ins> " + checkNull(obj.data[i].accessibility.adainfo) + "</li>";
+		//Get additional campground information
 		info += "<li><ins>Additional Info:</ins> " + checkNull(obj.data[i].accessibility.additionalinfo) + "</li>";
 		info += "</ul></li><br>";
 	 
+		//Get campground reservations information
 		info += "<li><b>Reservations Description: </b>" + checkNull(obj.data[i].reservationsdescription) + "</li><br>"
 		info += "<li><b>Reservations Sites First Come: </b>" + checkNull(obj.data[i].reservationssitesfirstcome) + "</li><br>";
 		info += "<li><b>Reservations Sites Reservable: </b>" + checkNull(obj.data[i].reservationssitesreservable) + "</li><br>";
 		
-		
+		//Get campground directions and URL		
 		if (obj.data[i].directionsUrl == "") {
 			info += "<li><b>Directions</b>: " + checkNull(obj.data[i].directionsoverview) + "</li></ul>";
 		} else {
 			info += "<li><a href=" + obj.data[i].directionsUrl + "><b>Directions</b></a>: " + checkNull(obj.data[i].directionsoverview) + "</li></ul>";
 		}
 		
+		//Add information to corresponding campground
 		document.getElementById("grounds" + i.toString()).innerHTML = info;
 	}
 }
 
+//Gets information about relevant alerts
 function getAlerts(p, s, query) {
 	var txt = httpGet("https://developer.nps.gov/api/v1/alerts?limit=200&parkCode=" + p + "&stateCode=" + s + "&q=" + query + "&api_key=qiwIVkT9FagdsHyhO3umyrCWj247FXAatbK65E7g");
 	var obj = JSON.parse(txt);
 	var info = "";
 	var i;
-	  
+
+	//Adds collapsible element under "Alerts" category
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		info += "<button class=\"collapsible\"> &nbsp;" + checkNull(obj.data[i].title) + "</button><div class=\"content\" style><p id=\"al" + i.toString() + "\">None</p></div>";
 	}
 	
 	var d1 = document.getElementById("alerts");
 	d1.insertAdjacentHTML('afterend', info);
-	  
+	
+	//Gets alert description information
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		info = "";
 		info += checkNull(obj.data[i].description);
@@ -686,12 +271,14 @@ function getAlerts(p, s, query) {
 	}
 }
 
+//Gets information about relevant events
 function getEvents(p, s, query) {
 	var txt = httpGet("https://developer.nps.gov/api/v1/events?limit=200&parkCode=" + p + "&stateCode=" + s + "&q=" + query + "&api_key=qiwIVkT9FagdsHyhO3umyrCWj247FXAatbK65E7g");
 	var obj = JSON.parse(txt);
 	var info = "";
 	var i;
-	  
+	
+	//Adds collapsible element under "Events" category
 	for (i = 0; (i < obj.pagesize && i < obj.total && i < 50); i++) {
 		info += "<button class=\"collapsible\"> &nbsp;" + checkNull(obj.data[i].title) + " (" + checkNull(obj.data[i].category) + ")</button><div class=\"content\" style><p id=\"ev" + i.toString() + "\">None</p></div>";
 	}
@@ -699,18 +286,24 @@ function getEvents(p, s, query) {
 	var d1 = document.getElementById("events");
 	d1.insertAdjacentHTML('afterend', info); 
 	  
+	//Gets relevant information about each event
 	for (i = 0; (i < obj.pagesize && i < obj.total && i < 50); i++) {
 		info = "";
 		info += checkNull(obj.data[i].description);
+		
+		//Gets event location information
 		info += "<li><b>Location: </b>" + checkNull(obj.data[i].location) + "</li><br>";
+		//Gets event fee information
 		info += "<li><b>Fee Info: </b>" + checkNull(obj.data[i].feeinfo) + "</li><br>";	 
-	 
+
+		//Gets event type information
 		info += "<li><b>Types:</b> <ul style=\"list-style-type:square;\">";
 		for (j = 0; j < obj.data[i].types.length; j++) {
 			info += "<li>" + checkNull(obj.data[i].types[j]) + "</li>";
 		}
 		info += "</li></ul>";
 
+		//Gets event times information
 		info += "<li><b>Times:</b> <ul style=\"list-style-type:square;\">";
 		for (j = 0; j < obj.data[i].times.length; j++) {
 			info += "<li>Time Start: " + checkNull(obj.data[i].times[j].timestart) + "</li>";
@@ -718,28 +311,33 @@ function getEvents(p, s, query) {
 		}
 		info += "</li></ul>";	 
 	 
+		//Gets event dates information
 		info += "<li><b>Dates:</b> <ul style=\"list-style-type:square;\">";
 		for (j = 0; j < obj.data[i].dates.length; j++) {
 			info += "<li>" + checkNull(obj.data[i].dates[j]) + "</li>";
 		}
 		info += "</li></ul>";
 	 
+		//Gets event tags information
 		info += "<li><b>Tags:</b> <ul style=\"list-style-type:square;\">";
 		for (j = 0; j < obj.data[i].tags.length; j++) {
 			info += "<li>" + checkNull(obj.data[i].tags[j]) + "</li>";
 		}
 		info += "</li></ul><br>";
 
+		//Adds information to relevant collapsible
 		document.getElementById("ev" + i.toString()).innerHTML = info;
 	}	
 }
 
+//Gets information about relevant lesson plans
 function getLessonPlans(p, s, query) {
 	var txt = httpGet("https://developer.nps.gov/api/v1/lessonplans?limit=200&parkCode=" + p + "&stateCode=" + s + "&q=" + query + "&api_key=qiwIVkT9FagdsHyhO3umyrCWj247FXAatbK65E7g");
 	var obj = JSON.parse(txt);
 	var info = "";
 	var i;
 
+	//Adds collapsible element under "Lesson Plans" category
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		if (obj.data[i].url == "") {
 			info += "<button class=\"collapsible\"> &nbsp;" + checkNull(obj.data[i].title) + " (" + checkNull(obj.data[i].subject) + ")</button><div class=\"content\"><p id=\"lp" + i.toString() + "\">None</p></div>";
@@ -751,22 +349,31 @@ function getLessonPlans(p, s, query) {
 	var d1 = document.getElementById("lessonplans");
 	d1.insertAdjacentHTML('afterend', info);
 
+	//Gets relevant information about each lesson
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		info = "";		
+		//Gets lesson plan grade level information
 		info += "<ul style=\"list-style-type:square;\"><li><ins>Grade Level:</ins> " + checkNull(obj.data[i].gradelevel) + "</li>";
+		//Gets lesson plan duration information
 		info += "<li><ins>Duration:</ins> " + checkNull(obj.data[i].duration) + "</li>";
+		//Gets lesson plan objective information
 		info += "<li><ins>Question/Objective:</ins> " + checkNull(obj.data[i].questionobjective) + "</li>";
+		//Gets lesson plan common core information
 		info += "<li><ins>Common Core:</ins> " + checkNull(obj.data[i].commoncore.statestandards) + "</li></ul>";
+		
+		//Adds information to relevant collapsible
 		document.getElementById("lp" + i.toString()).innerHTML = info;
 	}
 }
 
+//Gets information about relevant people
 function getPeople(p, s, query) {
 	var txt = httpGet("https://developer.nps.gov/api/v1/people?limit=200&parkCode=" + p + "&stateCode=" + s + "&q=" + query + "&api_key=qiwIVkT9FagdsHyhO3umyrCWj247FXAatbK65E7g");
 	var obj = JSON.parse(txt);
 	var info = "";
 	var i;
 
+	//Adds collapsible element under "People" category
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		info += "<button class=\"collapsible\">" + checkNull(obj.data[i].title) + "</button><div class=\"content\" style><p id=\"people" + i.toString() + "\">None</p></div>";
 	}
@@ -774,21 +381,29 @@ function getPeople(p, s, query) {
 	var d1 = document.getElementById("relevantpeople");
 	d1.insertAdjacentHTML('afterend', info);
 	  
+	//Gets relevant information about each person
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		info = "";
+		//Gets person's information and URL
 		info += "<a href=" + obj.data[i].url + "><b>" + checkNull(obj.data[i].title) + ":</b></a><br>";
+		//Gets person's picture
 		info += "<img src=" + obj.data[i].listingimage.url + " alt=" + checkNull(obj.data[i].listingimage.altText) + " style=\"max-width: 500px; min-width: 490px;\"><br>";
+		//Gets person's description
 		info += checkNull(obj.data[i].listingdescription) + "<br>";
+		
+		//Adds information to relevant collapsible
 		document.getElementById("people" + i.toString()).innerHTML = info;	
 	}
 }
 
+//Gets information about relevant places
 function getPlaces(p, s, query) {
 	var txt = httpGet("https://developer.nps.gov/api/v1/places?limit=200&parkCode=" + p + "&stateCode=" + s + "&q=" + query + "&api_key=qiwIVkT9FagdsHyhO3umyrCWj247FXAatbK65E7g");
 	var obj = JSON.parse(txt);
 	var info = "";
 	var i;
 
+	//Adds collapsible element under "Places" category
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		if (obj.data[i].url == "") {
 			info += "<button class=\"collapsible\"> &nbsp;" + checkNull(obj.data[i].title) + "</button><div class=\"content\"><p id=\"place" + i.toString() + "\">None</p></div>";
@@ -800,24 +415,31 @@ function getPlaces(p, s, query) {
 	var d1 = document.getElementById("relevantplaces");
 	d1.insertAdjacentHTML('afterend', info);
 	  
+	//Gets relevant information about each places
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		info = "";
+	
+		//Gets place description and URL
 		info += "<b>Description: </b>" + checkNull(obj.data[i].listingdescription) + "<br><br>";
 
+		//Gets place image if applicable
 		if (obj.data[i].listingimage.url != "") {
 			info += "<img src=" + obj.data[i].listingimage.url + " alt=" + checkNull(obj.data[i].listingimage.altText) + " style=\"max-width: 500px; min-width: 490px;\"><br>";
 		}
-			 
+
+		//Adds information to relevant collapsible
 		document.getElementById("place" + i.toString()).innerHTML = info;	
 	}
 }
 
+//Gets information about relevant articles
 function getArticles(p, s, query) {
 	var txt = httpGet("https://developer.nps.gov/api/v1/articles?limit=200&parkCode=" + p + "&stateCode=" + s + "&q=" + query + "&api_key=qiwIVkT9FagdsHyhO3umyrCWj247FXAatbK65E7g");
 	var obj = JSON.parse(txt);
 	var info = "";
 	var i;
 	  
+	//Adds collapsible element under "Articles" category
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		if (obj.data[i].url == "") {
 			info += "<button class=\"collapsible\"> &nbsp;" + checkNull(obj.data[i].title) + "</button><div class=\"content\"><p id=\"art" + i.toString() + "\">None</p></div>";
@@ -829,23 +451,31 @@ function getArticles(p, s, query) {
 	var d1 = document.getElementById("articles");
 	d1.insertAdjacentHTML('afterend', info);  
 
+	//Gets relevant information about each article
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		info = "";
+		
+		//Gets article description
 		info += "<b>Description: </b>" + checkNull(obj.data[i].listingdescription) + "<br><br>";
 
+		//Gets article image if applicable
 		if (obj.data[i].listingimage.url != "") {
 			info += "<img src=" + obj.data[i].listingimage.url + " alt=" + checkNull(obj.data[i].listingimage.altText) + " style=\"max-width: 500px; min-width: 490px;\"><br>";
 		}
+
+		//Adds information to relevant collapsible
 		document.getElementById("art" + i.toString()).innerHTML = info;
 	}
 }
-
+ 
+//Gets information about relevant news releases
 function getNewsReleases(p, s, query) {
 	var txt = httpGet("https://developer.nps.gov/api/v1/newsreleases?limit=200&parkCode=" + p + "&stateCode=" + s + "&q=" + query + "&api_key=qiwIVkT9FagdsHyhO3umyrCWj247FXAatbK65E7g");
 	var obj = JSON.parse(txt);
 	var info = "";
 	var i;
 
+	//Adds collapsible element under "News" category
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		if (obj.data[i].url == "") {
 			info += "<button class=\"collapsible\"> &nbsp;" + checkNull(obj.data[i].title) + "</button><div class=\"content\"><p id=\"news" + i.toString() + "\">None</p></div>";
@@ -856,12 +486,19 @@ function getNewsReleases(p, s, query) {
 	var d1 = document.getElementById("newsreleases");
 	d1.insertAdjacentHTML('afterend', info); 
 	  
+	//Gets relevant information about each news release
 	for (i = 0; (i < obj.total && i < 50); i++) {
 		info = "";
+
+		//Gets news release description
 		info += "<b>Description: </b>" + obj.data[i].abstract + "<br>";
+		
+		//Gets news release image if applicable
 		if (obj.data[i].image.url != "") {
 			info += "<img src=" + obj.data[i].image.url + " alt=" + checkNull(obj.data[i].image.altText) + " style=\"max-width: 500px; min-width: 490px;\"><br>";
 		}
+
+		//Adds information to relevant collapsible
 		document.getElementById("news" + i.toString()).innerHTML = info;
 	}
 }
@@ -1620,3 +1257,462 @@ function httpGet(theUrl){
 	xmlHttp.send( null );
 	return xmlHttp.responseText;
 }
+
+//Autofill arrays
+var states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois", "Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
+var places = ["Abraham Lincoln Birthplace National Historical Park",
+		"Acadia National Park",
+		"Adams National Historical Park",
+		"Adams National Memorial",
+		"African American Civil War Memorial National Memorial",
+		"African Burial Ground National Monument",
+		"Agate Fossil Beds National Monument",
+		"Alagnak Wild River National Wild And Scenic River",
+		"Alcatraz Island",
+		"Aleutian World War II National Historic Area",
+		"Alibates Flint Quarries National Monument",
+		"Allegheny Portage Railroad National Historic Site",
+		"Amistad National Recreation Area",
+		"Anacostia Park",
+		"Andersonville National Historic Site",
+		"Aniakchak National Monument and Preserve",
+		"Andrew Johnson National Historic Site",
+		"Antietam National Battlefield",
+		"Appomattox Court House National Historical Park",
+		"Apostle Islands National Lakeshore",
+		"Appalachian National Scenic Trail",
+		"Arches National Park",
+		"Arlington House The Robert E. Lee Memorial National Memorial",
+		"Arkansas Post National Memorial",
+		"Assateague Island National Seashore",
+		"Aztec Ruins National Monument",
+		"Badlands National Park",
+		"Bandelier National Monument",
+		"Baltimore-Washington National Parkway",
+		"Bering Land Bridge National Preserve",
+		"Bent's Old Fort National Historic Site",
+		"Bear Paw Battlefield",
+		"Big Bend National Park",
+		"Bighorn Canyon National Recreation Area",
+		"Big Cypress National Preserve",
+		"Big Hole National Battlefield",
+		"Biscayne National Park",
+		"Big South Fork National River and Recreation Area National River",
+		"Big Thicket National Preserve",
+		"Black Canyon Of The Gunnison National Park",
+		"Blue Ridge Parkway",
+		"Bluestone National Scenic River National Wild And Scenic River",
+		"Boston African American National Historic Site",
+		"Boston Harbor Islands National Recreation Area",
+		"Boston National Historical Park",
+		"Booker T. Washington National Monument",
+		"Bryce Canyon National Park",
+		"Brices Cross Roads National Battlefield Site",
+		"Brown v. Board Of Education National Historic Site",
+		"Buffalo National River",
+		"Buck Island Reef National Monument",
+		"Cabrillo National Monument",
+		"Canyon De Chelly National Monument",
+		"Castle Clinton National Monument",
+		"Cape Cod National Seashore",
+		"Casa Grande Ruins National Monument",
+		"Cape Hatteras National Seashore",
+		"Capitol Hill Parks",
+		"Cape Krusenstern National Monument",
+		"Cape Lookout National Seashore",
+		"Cape Henry National Memorial",
+		"Canaveral National Seashore",
+		"Canyonlands National Park",
+		"Capitol Reef National Park",
+		"Cane River Creole National Historical Park",
+		"Carl Sandburg Home National Historic Site",
+		"Castillo De San Marcos National Monument",
+		"Catoctin Mountain Park",
+		"Carlsbad Caverns National Park",
+		"Capulin Volcano National Monument",
+		"Carter G. Woodson Home National Historic Site",
+		"Chesapeake Bay Gateways",
+		"Cedar Creek and Belle Grove National Historical Park",
+		"Cedar Breaks National Monument",
+		"Chamizal National Memorial",
+		"Chattahoochee River National Recreation Area",
+		"Chickamauga and Chattanooga National Military Park",
+		"Chaco Culture National Historical Park",
+		"Chickasaw National Recreation Area",
+		"Chiricahua National Monument",
+		"Channel Islands National Park",
+		"Chesapeake and Ohio Canal National Historical Park",
+		"Charles Pinckney National Historic Site",
+		"Christiansted National Historic Site",
+		"Central High School National Historic Site",
+		"City Of Rocks National Reserve",
+		"Clara Barton National Historic Site",
+		"Claude Moore Colonial Farm",
+		"Constitution Gardens",
+		"Colorado National Monument",
+		"Colonial National Historical Park",
+		"Colonial Parkway",
+		"Congaree National Park",
+		"Coronado National Memorial",
+		"Cowpens National Battlefield",
+		"Crown of the Continent Ecosystem",
+		"Crater Lake National Park",
+		"Craters Of The Moon National Monument and Preserve",
+		"Cumberland Gap National Historical Park",
+		"Cumberland Island National Seashore",
+		"Curecanti National Recreation Area",
+		"Cuyahoga Valley National Park",
+		"David Berger National Memorial",
+		"Delaware National Scenic River National Wild And Scenic River",
+		"Denali National Park and Preserve",
+		"Devils Postpile National Monument",
+		"DeSoto National Memorial",
+		"Devils Tower National Monument",
+		"Death Valley National Park",
+		"Delaware Water Gap National Recreation Area",
+		"Dinosaur National Monument",
+		"Dry Tortugas National Park",
+		"Dwight D. Eisenhower National Memorial",
+		"East Potomac Park",
+		"Ebey's Landing NH Reserve National Reserve",
+		"Edgar Allan Poe National Historic Site",
+		"Thomas Edison National Historical Park",
+		"Effigy Mounds National Monument",
+		"Eisenhower National Historic Site",
+		"Ellis Island National Monument",
+		"El Malpais National Monument",
+		"El Morro National Monument",
+		"Eleanor Roosevelt National Historic Site",
+		"Eugene O'Neill National Historic Site",
+		"Everglades National Park",
+		"Farmington National Wild And Scenic River",
+		"Federal Hall National Memorial",
+		"Fire Island National Seashore",
+		"First Ladies National Historic Site",
+		"Florissant Fossil Beds National Monument",
+		"Flight 93 National Memorial",
+		"Fort Bowie National Historic Site",
+		"Fossil Butte National Monument",
+		"Fort Caroline National Memorial",
+		"Fort Circle Parks",
+		"Fort Davis National Historic Site",
+		"Fort Donelson National Battlefield",
+		"Fort Dupont Park",
+		"Fort Foote Park",
+		"Fort Frederica National Monument",
+		"Fort Laramie National Historic Site",
+		"Fort Larned National Historic Site",
+		"Fort Matanzas National Monument",
+		"Fort McHenry NM and Historic Shrine National Monument",
+		"Fort Moultrie National Monument",
+		"Fort Necessity National Battlefield",
+		"Fort Point National Historic Site",
+		"Fort Pulaski National Monument",
+		"Fort Raleigh National Historic Site",
+		"Fort Scott National Historic Site",
+		"Fort Smith National Historic Site",
+		"Fort Stanwix National Monument",
+		"Fort Sumter National Monument",
+		"Ford's Theatre National Historic Site",
+		"Fort Union National Monument",
+		"Fort Union Trading Post National Historic Site",
+		"Fort Vancouver National Historic Site",
+		"Fort Washington Park",
+		"Franklin Delano Roosevelt National Memorial",
+		"Frederick Douglass National Historic Site",
+		"Friendship Hill National Historic Site",
+		"Frederick Law Olmsted National Historic Site",
+		"Francis Scott Key National Memorial",
+		"Fredericksburg and Spotsylvania County Battlefields Memorial National Military Park National Military Park",
+		"Gates Of The Arctic National Park and Preserve",
+		"Gauley River National Recreation Area",
+		"Gateway National Recreation Area",
+		"General Grant National Memorial",
+		"George Mason Memorial",
+		"George Rogers Clark National Historical Park",
+		"Gettysburg National Military Park",
+		"George Washington Birthplace National Monument",
+		"Gila Cliff Dwellings National Monument",
+		"Glacier National Park",
+		"Glacier Bay National Park and Preserve",
+		"Glen Canyon National Recreation Area",
+		"Glen Echo Park",
+		"Glorieta National Battlefield",
+		"Golden Gate National Recreation Area",
+		"Governors Island National Monument",
+		"Golden Spike National Historic Site",
+		"Great Basin National Park",
+		"Grand Canyon National Park",
+		"Greenbelt Park",
+		"Great Egg Harbor National Scenic and Recreational River National Wild And Scenic River",
+		"Great Falls Park",
+		"Grant-Kohrs Ranch National Historic Site",
+		"Grand Portage National Monument",
+		"Great Sand Dunes National Park and Preserve",
+		"Great Smoky Mountains National Park",
+		"Grand Teton National Park",
+		"Guilford Courthouse National Military Park",
+		"Gulf Islands National Seashore",
+		"Guadalupe Mountains National Park",
+		"George Washington Carver National Monument",
+		"George Washington Memorial Parkway",
+		"Harpers Ferry National Historical Park",
+		"Hagerman Fossil Beds National Monument",
+		"Hamilton Grange National Memorial",
+		"Harmony Hall",
+		"Haleakala National Park",
+		"Hampton National Historic Site",
+		"Hawaii Volcanoes National Park",
+		"Herbert Hoover National Historic Site",
+		"Horseshoe Bend National Military Park",
+		"Hopewell Culture National Historical Park",
+		"Home Of Franklin D. Roosevelt National Historic Site",
+		"Hopewell Furnace National Historic Site",
+		"Homestead NM of America National Monument",
+		"Hot Springs National Park",
+		"Hovenweep National Monument",
+		"Harry S. Truman National Historic Site",
+		"Hubbell Trading Post National Historic Site",
+		"Ice Age National Scenic Trail",
+		"Independence National Historical Park",
+		"Indiana Dunes National Lakeshore",
+		"Isle Royale National Park",
+		"James A. Garfield National Historic Site",
+		"New Orleans Jazz National Historical Park",
+		"Jewel Cave National Monument",
+		"Jefferson National Expansion Memorial National Memorial",
+		"Thomas Jefferson Memorial",
+		"Jean Lafitte National Historical Park and Preserve",
+		"Jimmy Carter National Historic Site",
+		"John Day Fossil Beds National Monument",
+		"John D. Rockefeller Jr. Memorial Parkway",
+		"John Ericsson National Memorial",
+		"John Fitzgerald Kennedy National Historic Site",
+		"John F. Kennedy Center for the Performing Arts",
+		"Johnstown Flood National Memorial",
+		"John Muir National Historic Site",
+		"Joshua Tree National Park",
+		"Kaloko-Honokohau National Historical Park",
+		"Kalaupapa National Historical Park",
+		"Katmai National Park and Preserve",
+		"Kenai Fjords National Park",
+		"Kennesaw Mountain National Battlefield Park",
+		"Kenilworth Park and Aquatic Gardens",
+		"Keweenaw National Historical Park",
+		"Kings Canyon National Park",
+		"Kings Mountain National Military Park",
+		"Klondike Gold Rush National Historical Park",
+		"Klondike Gold Rush - Seattle Unit National Historical Park",
+		"Knife River Indian Villages National Historic Site",
+		"Kobuk Valley National Park",
+		"Korean War Veterans National Memorial",
+		"Lava Beds National Monument",
+		"Lake Chelan National Recreation Area",
+		"Lake Clark National Park and Preserve",
+		"Lake Mead National Recreation Area",
+		"Lamprey Wild and Scenic River",
+		"Lake Meredith National Recreation Area",
+		"Lake Roosevelt National Recreation Area",
+		"Lassen Volcanic National Park",
+		"Lewis and Clark National Historical Park",
+		"Little Bighorn Battlefield National Monument",
+		"Lincoln Boyhood National Memorial",
+		"Lincoln Home National Historic Site",
+		"Lincoln Memorial National Memorial",
+		"Little River Canyon National Preserve",
+		"Longfellow House - Washington's Headquarters National Historic Site",
+		"Lower Saint Croix National Scenic River",
+		"Lowell National Historical Park",
+		"Lyndon Baines Johnson Memorial Grove on the Potomac National Memorial",
+		"Lyndon B. Johnson National Historical Park",
+		"Mary McLeod Bethune Council House National Historic Site",
+		"Marsh-Billings-Rockefeller National Historical Park",
+		"Mammoth Cave National Park",
+		"Marin Headlands Sites",
+		"National Mall",
+		"Martin Luther King Jr National Historic Site",
+		"Manassas National Battlefield Park",
+		"Manzanar National Historic Site",
+		"Manhattan Sites",
+		"Maurice National Wild And Scenic River",
+		"Martin Van Buren National Historic Site",
+		"Maggie L. Walker National Historic Site",
+		"McLoughlin House National Historic Site",
+		"Meridian Hill Park",
+		"Mesa Verde National Park",
+		"Mimbres Culture National Monument",
+		"Minidoka Internment National Historic Site",
+		"Minute Man National Historical Park",
+		"Minuteman Missile National Historic Site",
+		"Mississippi National River and Recreation Areas National River",
+		"Martin Luther King Jr National Historic Site",
+		"Missouri National Recreational River National Wild And Scenic River",
+		"Montezuma Castle National Monument",
+		"Moores Creek National Battlefield",
+		"Mojave National Preserve",
+		"Monocacy National Battlefield",
+		"Mount Rainier National Park",
+		"Morristown National Historical Park",
+		"Mount Rushmore National Memorial",
+		"Mt. Soledad National Memorial",
+		"Muir Woods National Monument",
+		"Natural Bridges National Monument",
+		"National Capital Parks",
+		"National Capital Parks-East",
+		"National Mall and Memorial Parks",
+		"Natchez National Historical Park",
+		"Natchez Trace Parkway",
+		"Natchez Trace National Scenic Trail",
+		"Navajo National Monument",
+		"U.S. Navy Memorial",
+		"North Cascades National Park Service Complex",
+		"New Bedford Whaling National Historical Park",
+		"Nez Perce National Historical Park",
+		"New River Gorge National River",
+		"Nicodemus National Historic Site",
+		"Niobrara and Missouri National Scenic and Recreational Rivers",
+		"Niobrara National Scenic River National Wild And Scenic River",
+		"Ninety Six National Historic Site",
+		"National Law Enforcement Officers National Memorial",
+		"Noatak National Preserve",
+		"North Cascades National Park",
+		"North Country National Scenic Trail",
+		"National Parks of New York Harbor Management Unit",
+		"National Park of American Samoa National Park",
+		"Obed Wild and Scenic River National Wild And Scenic River",
+		"Ocmulgee National Monument",
+		"The Old Stone House",
+		"Olympic National Park",
+		"Old Post Office Tower",
+		"Oregon Caves National Monument",
+		"Organ Pipe Cactus National Monument",
+		"Oxon Cove Park and Oxon Hill Run",
+		"Oxon Run National Parkway",
+		"Ozark National Scenic Riverways National River",
+		"Palo Alto Battlefield National Historical Park",
+		"Pennsylvania Avenue National Historic Site",
+		"Paterson Great Falls National Historical Park",
+		"Padre Island National Seashore",
+		"Parashant National Monument",
+		"Pecos National Historical Park",
+		"Petrified Forest National Park",
+		"Pea Ridge National Military Park",
+		"Petersburg National Battlefield",
+		"Petroglyph National Monument",
+		"Perry's Victory and International Peace Memorial National Memorial",
+		"Hohokam Pima National Monument",
+		"Peirce Mill Park",
+		"Pinnacles National Monument",
+		"Pipestone National Monument",
+		"Pictured Rocks National Lakeshore",
+		"Piscataway Park",
+		"Pipe Spring National Monument",
+		"Port Chicago Naval Magazine National Memorial",
+		"Poverty Point National Monument",
+		"Point Reyes National Seashore",
+		"President's Park (White House)",
+		"Presidio of San Francisco",
+		"Prince William Forest Park",
+		"Puukohola Heiau National Historic Site",
+		"Pu'uhonua o Honaunau National Historical Park",
+		"Rainbow Bridge National Monument",
+		"Redwood National Park",
+		"Richmond National Battlefield Park",
+		"Rio Grande Wild and Scenic River National Wild And Scenic River",
+		"River Raisin National Battlefield Park",
+		"Rock Creek Park",
+		"Ross Lake National Recreation Area",
+		"Rocky Mountain National Park",
+		"Rosie The Riveter WWII Home Front National Historical Park",
+		"Roosevelt-Vanderbilt Headquarters",
+		"Roger Williams National Memorial",
+		"Ronald Reagan Boyhood Home National Historic Site",
+		"Russell Cave National Monument",
+		"San Antonio Missions National Historical Park",
+		"Saint Croix National Scenic River National Wild And Scenic River",
+		"Saint Croix Island International Historic Site",
+		"San Francisco Maritime National Historical Park",
+		"Saint-Gaudens National Historic Site",
+		"Saguaro National Park",
+		"Sagamore Hill National Historic Site",
+		"Saugus Iron Works National Historic Site",
+		"San Juan Island National Historical Park",
+		"San Juan National Historic Site",
+		"Salem Maritime National Historic Site",
+		"Santa Monica Mountains National Recreation Area",
+		"Sand Creek Massacre National Historic Site",
+		"Saint Paul's Church National Historic Site",
+		"Salinas Pueblo Missions National Monument",
+		"Saratoga National Historical Park",
+		"Salt River Bay NHP and Ecological Preserve National Historical Park",
+		"Scotts Bluff National Monument",
+		"Sequoia and Kings Canyon National Parks",
+		"Sequoia National Park",
+		"Shenandoah National Park",
+		"Shiloh National Military Park",
+		"Sitka National Historical Park",
+		"Sleeping Bear Dunes National Lakeshore",
+		"Springfield Armory National Historic Site",
+		"Steamtown National Historic Site",
+		"Statue Of Liberty National Monument",
+		"Stones River National Battlefield",
+		"Sudbury Assabet and Concord National Wild And Scenic River",
+		"Sunset Crater Volcano National Monument",
+		"Suitland Parkway",
+		"Tallgrass Prairie National Preserve",
+		"Theodore Roosevelt Island National Memorial",
+		"Thaddeus Kosciuszko National Memorial",
+		"Theodore Roosevelt Birthplace National Historic Site",
+		"Theodore Roosevelt Inaugural National Historic Site",
+		"Theodore Roosevelt National Park",
+		"Thomas Stone National Historic Site",
+		"Timpanogos Cave National Monument",
+		"Timucuan Ecological and Historic Preserve",
+		"Tonto National Monument",
+		"Tuskegee Airmen National Historic Site",
+		"Tuskegee Institute National Historic Site",
+		"Tumacacori National Historical Park",
+		"Tupelo National Battlefield",
+		"Tuzigoot National Monument",
+		"Ulysses S. Grant National Historic Site",
+		"Upper Delaware National Scenic and Recreation River National Wild And Scenic River",
+		"Valley Forge National Historical Park",
+		"World War II Valor in the Pacific National Monument",
+		"Vanderbilt Mansion National Historic Site",
+		"Vicksburg National Military Park",
+		"Virgin Islands Coral Reef National Monument",
+		"Virgin Islands National Park",
+		"Vietnam Veterans Memorial National Memorial",
+		"Vietnam Womens National Memorial",
+		"Voyageurs National Park",
+		"Washita Battlefield National Historic Site",
+		"Walnut Canyon National Monument",
+		"Warren G Harding National Memorial",
+		"Waterton Lakes National Park (Canada)",
+		"Washington Monument National Memorial",
+		"War In The Pacific National Historical Park",
+		"Warm Springs Apache",
+		"Western Arctic National Parklands",
+		"Weir Farm National Historic Site",
+		"West Potomac Park",
+		"White House (President's Park)",
+		"Whiskeytown National Recreation Area",
+		"Whitman Mission National Historic Site",
+		"White Sands National Monument",
+		"Wildcat Brook Wild and Scenic River",
+		"Wind Cave National Park",
+		"William Jefferson Clinton Birthplace National Historic Site",
+		"Wilson's Creek National Battlefield",
+		"William Howard Taft National Historic Site",
+		"Women's Rights National Historical Park",
+		"Wolf Trap National Park for the Performing Arts",
+		"Wright Brothers National Memorial",
+		"Wrangell - St Elias National Park and Preserve",
+		"Wupatki National Monument",
+		"World War II Memorial National Memorial",
+		"Yellowstone National Park",
+		"Yorktown Battlefield",
+		"Yosemite National Park",
+		"Yukon-Charley Rivers National Preserve",
+		"Yucca House National Monument",
+		"Zion National Park"];
